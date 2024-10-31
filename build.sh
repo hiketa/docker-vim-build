@@ -7,11 +7,13 @@ set -xe
 case "$NAME" in
     "Fedora")
         dnf install -y clang make git python3-devel lua-devel lua ncurses-devel
+        dnf update -y
         ;;
     "Rocky Linux")
         dnf install -y epel-release
         # lua-develだけはdevelリポジトリにある。
         dnf install --enablerepo=devel -y clang make git python3-devel lua-devel lua ncurses-devel
+        dnf update -y
         ;;
     "Ubuntu")
         # 仕組みは不明だが、
