@@ -10,7 +10,8 @@ case "$NAME" in
         ;;
     "Rocky Linux")
         dnf install -y epel-release
-        dnf install -y clang make git python3-devel compat-lua-devel compat-lua ncurses-devel
+        # lua-develだけはdevelリポジトリにある。
+        dnf install --enablerepo=devel -y clang make git python3-devel lua-devel lua ncurses-devel
         ;;
     "Ubuntu")
         # 仕組みは不明だが、
